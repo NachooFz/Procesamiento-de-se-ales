@@ -41,12 +41,10 @@ def intersinc(s, fo, fn, ti, tf):
     sig = []
     acum = 0
     tiempo = np.arange(ti, tf, (tf-ti)/m)
-    tiempo2, senal = sgl.sinc(ti, tf, 0.5, 100, 1, 0)
     for i in range(int(m)):
         acum = 0
         for j in range(n):
             argumento = (i*Ti-j*T)/T
-            # index = nearest(tiempo2, argumento)
             acum += s[j]*np.sinc(argumento)
         sig.append(acum)
     return tiempo, sig

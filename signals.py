@@ -17,7 +17,7 @@ def c(tin, tfin, fs, fm, amp, fase):
 
 def sinc(tin, tfin, fs, fm, amp, fase):
     T = 1/fm
-    tiempo = np.arange(tin, tfin-T, T)
+    tiempo = np.arange(tin, tfin, T)
     senoidal = []
     for t in tiempo:
         x = 2*math.pi*fs*t + fase
@@ -27,7 +27,7 @@ def sinc(tin, tfin, fs, fm, amp, fase):
 
 def seno(tin, tfin, fm, fa, amp, fase):
     T = 1/fa
-    tiempo = np.arange(tin, tfin+T/2, T)
+    tiempo = np.arange(tin, tfin, T)
     senoidal = []
     for t in tiempo:
         senoidal.append(amp*math.sin(2*math.pi*fm*t + fase))
